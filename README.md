@@ -1,5 +1,6 @@
-# hi
-
+# basic
+* `sudo apt install build-essential`
+* 
 
 # Chrome
 * [Shortkeys (Custom Keyboard Shortcuts) extension](https://chromewebstore.google.com/detail/shortkeys-custom-keyboard/logpjaacgmcbpdkdchjiaagddngobkck?hl=en-US&gl=US)
