@@ -26,7 +26,7 @@ jobs:
       - name: Generate .env file
         run: >
           echo ${{toJson(vars)}}
-          echo ${{vars.FOO}} > .env
+          echo ${{env.FOO}} > .env
           echo ${{secrets.CMS_ADMIN_PASSWORD}} >> .env
 
       - name: Build site
