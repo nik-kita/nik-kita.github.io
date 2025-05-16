@@ -20,25 +20,12 @@ jobs:
       - name: Setup Deno environment
         uses: denoland/setup-deno@v2
 
-      - name: Install dependencies
-        run: deno task install
-
       - name: Generate .env file
         run: >
           echo """RUNTIME_ENV=production""" >> .env
           && echo """CMS_ADMIN_PASSWORD=${{secrets.CMS_ADMIN_PASSWORD}}""" >> .env
 
-      - name: Build site
-        run: deno task build
-
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: Build GitHub Pages with Lume
+        uses: lumeland/build/gh-pages@main
         with:
-          path: "_site"
-
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          cmd: deno task install && deno task build
