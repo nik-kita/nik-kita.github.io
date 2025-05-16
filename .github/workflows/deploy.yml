@@ -12,7 +12,7 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    environment: github-pages
     steps:
       - name: Clone repository
         uses: actions/checkout@v4
@@ -22,6 +22,9 @@ jobs:
 
       - name: Install dependencies
         run: deno task install
+
+      - name: Generate .env file
+        run: echo ${{vars}} > .env && echo ${{vars}} > .env && echo ${{secrets}} >> .env
 
       - name: Build site
         run: deno task build
