@@ -24,7 +24,7 @@ jobs:
         run: deno task install
 
       - name: Generate .env file
-        run: |
+        run: >
           echo ${{toJson(vars)}}
           echo ${{vars.FOO}} > .env
           echo ${{secrets.CMS_ADMIN_PASSWORD}} >> .env
