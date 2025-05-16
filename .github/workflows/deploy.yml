@@ -25,11 +25,8 @@ jobs:
 
       - name: Generate .env file
         run: >
-          echo ${{vars.FOO}}
-          echo ${{env.FOO}}
-          echo ${{env.FOO}} > .env
-          echo ${{vars.FOO}} > .env
-          echo ${{secrets.CMS_ADMIN_PASSWORD}} >> .env
+          echo """RUNTIME_ENV=production""" >> .env
+          echo """CMS_ADMIN_PASSWORD=${{secrets.CMS_ADMIN_PASSWORD}}""" >> .env
 
       - name: Build site
         run: deno task build
