@@ -1,10 +1,8 @@
 import lume from "lume/mod.ts";
-import plugins from "./plugins.ts";
+import blog from "blog/mod.ts";
 
-const site = lume({
-  src: "./src",
-});
+const site = lume();
 
-site.use(plugins());
+site.use(blog());
 
 export default site;
