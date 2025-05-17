@@ -1,9 +1,7 @@
 import lume from "lume/mod.ts";
 import blog from "blog/mod.ts";
 
-const site = lume({
-  src: "./src",
-});
+const site = lume();
 
 site.use(blog());
 
