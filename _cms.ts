@@ -7,8 +7,9 @@ cms.auth({
     "oops... missing password".split("").map(Math.random).join("."),
 });
 cms.storage(
-  "src",
+  "gh",
   new GitHub({
+    path: "src",
     client: new Octokit({ auth: Deno.env.get("GITHUB_PERSONAL_ACCESS_TOKEN") }),
     owner: "nik-kita",
     repo: "nik-kita.github.io",
