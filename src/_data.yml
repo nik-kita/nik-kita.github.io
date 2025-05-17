@@ -2,5 +2,6 @@ home:
   welcome: 'Hi, there!'
 menu_links:
   - title: Home
+    url: /
 metas:
   generator: true
