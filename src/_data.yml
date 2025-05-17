@@ -1,6 +1,6 @@
 home:
   welcome: 'Hi, there!'
 menu_links:
-  - {}
+  - title: Home
 metas:
-  generator: false
+  generator: true
