@@ -2,7 +2,17 @@ import lumeCMS from "lume/cms/mod.ts";
 import GitHub from "lume/cms/storage/github.ts";
 import { Octokit } from "npm:octokit";
 
-const cms = lumeCMS();
+const html = String.raw;
+const cms = lumeCMS({
+  site: {
+    name: 'My cms',
+    description: "Here I can edit the content",
+    url: 'https://nik-kita.github.io',
+    body: html`
+      <button onclick="alert('good boy :D')">click me!</button>
+    `,
+  }
+});
 cms.auth({
   admin: Deno.env.get("CMS_ADMIN_PASSWORD") ||
     "oops... missing password".split("").map(Math.random).join("."),
