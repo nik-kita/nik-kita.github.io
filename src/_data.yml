@@ -4,4 +4,4 @@ menu_links:
   - title: Home
     url: 'https://nik-kita.github.io'
 metas:
-  generator: true
+  generator: false
