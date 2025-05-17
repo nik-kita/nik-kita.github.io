@@ -5,3 +5,5 @@ menu_links:
     url: 'https://nik-kita.github.io'
 metas:
   generator: false
+  site: 'https://nik-kita.github.io'
+  title: Home
