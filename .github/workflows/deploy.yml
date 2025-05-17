@@ -11,6 +11,7 @@ permissions:
 
 jobs:
   build:
+    name: Update content
     runs-on: ubuntu-latest
     environment:
       name: github-pages
@@ -22,7 +23,17 @@ jobs:
       - name: Setup Deno environment
         uses: denoland/setup-deno@v2
 
-      - name: Build GitHub Pages with Lume
-        uses: lumeland/build/gh-pages@main
+      - name: Build site
+        run: deno task build
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          cmd: deno task install && deno task build
+          path: "_site"
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

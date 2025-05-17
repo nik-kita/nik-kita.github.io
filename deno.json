@@ -6,7 +6,6 @@
     "lume/cms/": "https://cdn.jsdelivr.net/gh/lumeland/cms@0.11.5/"
   },
   "tasks": {
-    "install": "deno install --allow-scripts",
     "lume": "echo \"import 'lume/cli.ts'\" | deno run -A --env-file -",
     "build": "deno task lume",
     "serve": "deno task lume -s",
