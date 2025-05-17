@@ -8,8 +8,8 @@ extra_head: []
 
 # Metas plugin https://lume.land/plugins/metas/#description
 metas:
-  site: Blog name
-  description: General description of the blog
+  site: nik-kita
+  description: description
   title: "=title"
   image: "=image"
   twitter: "@username"
