@@ -1,2 +1,9 @@
 home:
   welcome: 'Hi, there!'
+menu_links:
+  - title: Root
+    url: /
+  - title: Home
+    url: 'https://nik-kita.github.io'
+metas:
+  generator: false
