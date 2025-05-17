@@ -1,0 +1,28 @@
+name: Deploy cms on Deno Deploy
+
+on:
+  pull_request:
+    branches: ["main"]
+
+permissions:
+  id-token: write
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    environment:
+      name: cms
+      url: https://nik-kita-github-io.deno.dev
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v4
+
+      - name: Install Deno
+        uses: denoland/setup-deno@v2
+
+      - name: Upload to Deno Deploy
+        uses: denoland/deployctl@v1
+        with:
+          project: "nik-kita-github-io"
+          entrypoint: "_cms.ts"

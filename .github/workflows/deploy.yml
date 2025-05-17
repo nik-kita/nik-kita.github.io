@@ -12,18 +12,15 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-    environment: github-pages
+    environment:
+      name: github-pages
+      url: nik-kita.github.io
     steps:
       - name: Clone repository
         uses: actions/checkout@v4
 
       - name: Setup Deno environment
         uses: denoland/setup-deno@v2
-
-      - name: Generate .env file
-        run: >
-          echo """RUNTIME_ENV=production""" >> .env
-          && echo """CMS_ADMIN_PASSWORD=${{secrets.CMS_ADMIN_PASSWORD}}""" >> .env
 
       - name: Build GitHub Pages with Lume
         uses: lumeland/build/gh-pages@main
