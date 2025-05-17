@@ -1,0 +1,6 @@
+home:
+  welcome: 'Hi, there!'
+menu_links:
+  - {}
+metas:
+  generator: false
