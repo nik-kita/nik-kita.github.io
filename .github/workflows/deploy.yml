@@ -3,10 +3,6 @@ name: Publish on GitHub Pages
 on:
   push:
     branches: [main]
-  pull_request:
-    types:
-      - closed
-    branches: [main]
 
 permissions:
   contents: read
@@ -16,7 +12,6 @@ permissions:
 jobs:
   build:
     cancel-timeout-minutes: 5
-    if: github.event.pull_request.merged == true
     name: Update content
     runs-on: ubuntu-latest
     environment:
